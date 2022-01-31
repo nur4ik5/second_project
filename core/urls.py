@@ -20,7 +20,10 @@ from django.conf.urls.static import static
 from profiles import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.movie_list, name = 'movie_list')
+    path('', views.movie_list, name = 'movie_list'),
+    path('me', views.my_profile, name = 'my_profile'),
+    path('login_page', views.login_page, name = 'login_page'),
+    path('logout_page', views.login_page, name = 'login_page'),
 
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 

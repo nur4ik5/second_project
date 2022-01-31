@@ -10,7 +10,7 @@ def profile_image_upload(instance, filename):
 
 
 class Profile(models.Model):
-	profile_photo = models.ImageField(upload_to=profile_image_upload)
+	profile_image = models.ImageField(upload_to=profile_image_upload)
 	user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
 	name = models.CharField(max_length=60, null=True)
 	phone_num = models.CharField(max_length=25, null=True)
