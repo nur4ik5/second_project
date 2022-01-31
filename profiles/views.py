@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from .models import Movie
-from django .contrib.auth import authenticate, login
+from django .contrib.auth import authenticate, login, logout
+from djengo.contrib.auth.decorators import login_required
+
+
 
 def movie_list(request):
 	movies = Movie.objects.all()
@@ -9,6 +12,8 @@ def movie_list(request):
 	}
 	return render(request, 'profiles/movie_list.html', context)
 
+
+@login_required(login_url='/login_page')
 def my_profile(request):
 	""" Вьюха для просмотра Своего профиля """
 	profile = request.user.profile
@@ -27,6 +32,12 @@ def login_page(request):
 			login(request, user)
 			return redirect('my_profile')
 	return render (request, 'profiles/login_page.html')
+
+
+def logout_page(request):
+	logout(user)
+	return redirect('movie_list')
+
 
 
 
