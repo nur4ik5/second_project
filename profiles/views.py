@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Movie
-from django .contrib.auth import authenticate, login, logout
-from djengo.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -24,6 +24,8 @@ def my_profile(request):
 
 def login_page(request):
 	""" Страница для входа """
+	if request.user.is_authenticated:
+		return redirect('my_profile')
 	if request.method == 'POST':
 		username = request.POST.get('username')
 		password = request.POST.get('password')
@@ -35,7 +37,7 @@ def login_page(request):
 
 
 def logout_page(request):
-	logout(user)
+	logout(request)
 	return redirect('movie_list')
 
 
