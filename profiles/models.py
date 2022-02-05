@@ -53,3 +53,4 @@ class MovieImage(models.Model):
 	class Meta:
 		verbose_name='Изображение к фильму'
 		verbose_name_plural='Изображение к фильму'
+
