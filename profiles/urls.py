@@ -10,7 +10,7 @@ urlpatterns = [
     path('me', views.my_profile, name = 'my_profile'),
     path('login_page', views.login_page, name = 'login_page'),
     path('logout_page', views.logout_page, name = 'logout_page'),
-
+    path('/category_page/<id>', views.category_page, name= 'category_page'),
 ]
 
 

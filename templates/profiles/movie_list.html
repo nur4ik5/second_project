@@ -4,6 +4,13 @@
 <body>
 	<div class="container">
 		<div class="row">
+			<ul>
+				{% for c in categories%}
+				<li>
+					<a href="{% url 'category_page' c.id%}">{{c.name}}</a>
+				</li>
+				{% endfor %}
+			</ul>
 			{% for m in movies%}
 			<li>
 				{{m.name}}
