@@ -1,9 +1,11 @@
-{% extends "profiles/_base_.html" %}
+{% extends "_base_.html" %}
 {% block content %}
 	<div class="row">
 		<h3>{{profile.name}}</h3>
 		<h4>username: {{user.username}}</h4>
 		<img class = "profile_photo"src="{{profile.profile_image.url}}" >
 	</div>
+
+	
 	
 {% endblock content %}

@@ -61,3 +61,6 @@ class MovieImage(models.Model):
 		verbose_name='Изображение к фильму'
 		verbose_name_plural='Изображение к фильму'
 
+
+
+

@@ -1,0 +1,24 @@
+{% extends "_base_.html" %}
+{% load static %}
+{% block content %}
+<div class="row">
+	<ul>
+		{% for b in blogs %}
+		<li>	
+			{{b.name}}
+			<p>
+				{% for c in b.comment_set.all %}
+				{{c.text}}
+				{% endfor %}
+			</p>
+		</li>
+		<hr>
+		{% endfor %}
+	</ul>	
+</div>
+{% endblock content%}
+
+
+
+
+
