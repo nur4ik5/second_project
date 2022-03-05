@@ -8,5 +8,6 @@ from .views import *
 urlpatterns = [
 	path('blogs/', blog_list, name = 'blog_list'),
 	path('comments/', comment_list, name = 'comment_list'),
-	
+	path('comments/<id>/', comment_detail, name = 'comment_detail'),
+    path('blogs/<str:slug>/', blog_detail, name='blog_detail'),
 ]

@@ -4,14 +4,14 @@
 <div class="row">
 	<ul>
 		{% for c in comments %}
-		<li>	
-			{{c.text}}
-			<p>
-				{{c.blog.name}}
-			</p>
-		</li>
+			<li>
+				<a href="{{c.get_absolute_url}}">{{c.text}}</a>
+				<p>
+					{{c.blog.title}}
+				</p>
+			</li>
 		<hr>
 		{% endfor %}
-	</ul>	
+	</ul>
 </div>
 {% endblock content%}

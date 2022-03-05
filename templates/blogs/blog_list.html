@@ -5,12 +5,10 @@
 	<ul>
 		{% for b in blogs %}
 		<li>	
-			{{b.name}}
-			<p>
-				{% for c in b.comment_set.all %}
-				{{c.text}}
-				{% endfor %}
-			</p>
+			<a href="{{b.get_absolute_url}}">{{b.name}}</a>
+			{% for c in b.comment_set.all %}
+			<p>{{c.text}}</p>
+			{% endfor %}
 		</li>
 		<hr>
 		{% endfor %}
